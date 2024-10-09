@@ -1,0 +1,25 @@
+From dc890cb280570e821fb4ceeb2246c8c6e80fc45e Mon Sep 17 00:00:00 2001
+From: jerryinnodisk <163994839+jerryinnodisk@users.noreply.github.com>
+Date: Tue, 6 Aug 2024 07:35:53 +0000
+Subject: [PATCH] modified:   configs/imx8mp_evk_defconfig
+
+---
+ configs/imx8mp_evk_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configs/imx8mp_evk_defconfig b/configs/imx8mp_evk_defconfig
+index 658b63a4557..1f9a75036d9 100644
+--- a/configs/imx8mp_evk_defconfig
++++ b/configs/imx8mp_evk_defconfig
+@@ -17,7 +17,7 @@ CONFIG_SYS_I2C_MXC_I2C2=y
+ CONFIG_SYS_I2C_MXC_I2C3=y
+ CONFIG_DM_GPIO=y
+ CONFIG_SPL_TEXT_BASE=0x920000
+-CONFIG_USB_TCPC=y
++CONFIG_USB_TCPC=n
+ CONFIG_TARGET_IMX8MP_EVK=y
+ CONFIG_SPL_SERIAL=y
+ CONFIG_SPL_DRIVERS_MISC=y
+-- 
+2.45.2
+

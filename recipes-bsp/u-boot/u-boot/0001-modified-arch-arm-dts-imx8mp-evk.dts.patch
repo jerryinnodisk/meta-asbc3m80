@@ -1,0 +1,54 @@
+From dc6d1212b89764cbb6a55fbed23357b990fe8f1f Mon Sep 17 00:00:00 2001
+From: jerryinnodisk <163994839+jerryinnodisk@users.noreply.github.com>
+Date: Tue, 6 Aug 2024 06:49:35 +0000
+Subject: [PATCH] modified:   arch/arm/dts/imx8mp-evk.dts modified:  
+ board/freescale/imx8mp_evk/imx8mp_evk.c modified:  
+ configs/imx8mp_evk_defconfig
+
+---
+ arch/arm/dts/imx8mp-evk.dts             | 6 +++---
+ board/freescale/imx8mp_evk/imx8mp_evk.c | 4 ++--
+ configs/imx8mp_evk_defconfig            | 4 ++--
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm/dts/imx8mp-evk.dts b/arch/arm/dts/imx8mp-evk.dts
+index f6f33cb7695..f0e9405941c 100644
+--- a/arch/arm/dts/imx8mp-evk.dts
++++ b/arch/arm/dts/imx8mp-evk.dts
+@@ -10,7 +10,7 @@
+ #include "imx8mp.dtsi"
+ 
+ / {
+-	model = "NXP i.MX8MPlus LPDDR4 EVK board";
++	model = "ASBC-3M80";
+ 	compatible = "fsl,imx8mp-evk", "fsl,imx8mp";
+ 
+ 	chosen {
+@@ -833,8 +833,8 @@
+ 
+ 	pinctrl_uart2: uart2grp {
+ 		fsl,pins = <
+-			MX8MP_IOMUXC_UART2_RXD__UART2_DCE_RX	0x140
+-			MX8MP_IOMUXC_UART2_TXD__UART2_DCE_TX	0x140
++			MX8MP_IOMUXC_SD1_DATA3__UART2_DCE_RX	0x140
++			MX8MP_IOMUXC_SD1_DATA2__UART2_DCE_TX	0x140
+ 		>;
+ 	};
+ 
+diff --git a/board/freescale/imx8mp_evk/imx8mp_evk.c b/board/freescale/imx8mp_evk/imx8mp_evk.c
+index 5a8f619763e..21483162f6f 100644
+--- a/board/freescale/imx8mp_evk/imx8mp_evk.c
++++ b/board/freescale/imx8mp_evk/imx8mp_evk.c
+@@ -34,8 +34,8 @@ DECLARE_GLOBAL_DATA_PTR;
+ #define WDOG_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_ODE | PAD_CTL_PUE | PAD_CTL_PE)
+ 
+ static iomux_v3_cfg_t const uart_pads[] = {
+-	MX8MP_PAD_UART2_RXD__UART2_DCE_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
+-	MX8MP_PAD_UART2_TXD__UART2_DCE_TX | MUX_PAD_CTRL(UART_PAD_CTRL),
++	MX8MP_PAD_SD1_DATA3__UART2_DCE_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
++	MX8MP_PAD_SD1_DATA2__UART2_DCE_TX | MUX_PAD_CTRL(UART_PAD_CTRL),
+ };
+ 
+ static iomux_v3_cfg_t const wdog_pads[] = {
+
+
